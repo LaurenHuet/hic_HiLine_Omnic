@@ -32,3 +32,8 @@ bash 02_get_primary_assemblies.sh "/scratch/pawsey0964/lhuet/hic-analysis"
 ```
 bash 04_loop.sh
 ```
+**The run_hiline.sh script performs the following steps**
+1. Extracts the 30 largest contigs from the hifi assembly file
+2. Skims the HiC reads to 1x
+3. Aligns the skimmed reads to the 30 largest contigs and converts to cram file
+4. runs HiLine on cram file and 30 largest contigs, producing a stats directory with the results. 
