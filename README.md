@@ -38,6 +38,18 @@ bash 04_loop.sh
 3. Aligns the skimmed reads to the 30 largest contigs and converts to cram file
 4. runs HiLine on cram file and 30 largest contigs, producing a stats directory with the results.
 
+If there is an error and you need to re-run the script on one or more samples, there is a --clean flag you can include when you run the 04_loop.sh which will remove any old results from the directory. To use this open the 04_loop.sh script and add the --clean flag here: 
+
+```
+for sample in "${samples[@]}"; do
+    set -- $sample
+    sample_dir=$1
+    OG=$2
+    sbatch run_hiline.sh "$run_dir" "$sample_dir" "$OG" --clean
+done
+
+```
+
 **Step 5.** Download the results and pass onto the lab
 
 Download the output stats directory from the finished run directly to teams and inform the Lab results are ready to be viewed.
