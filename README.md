@@ -14,7 +14,7 @@ bash 01_download.sh "NEXT_251118_AD" "/scratch/pawsey0964/lhuet/hic-analysis"
 ```
 bash 02_get_primary_assemblies.sh "/scratch/pawsey0964/lhuet/hic-analysis"
 ```
-**Step 3.** Put the assemblies into the hic directories, the 03_run_hiline.sh and 04_loop.sh into the run directory 
+**Step 3.** Put the assemblies into the hic directories, add the 03_submit_loop.sh and 04_submit_hiline.sh into the run directory 
 ```
 **example**
 
@@ -30,9 +30,9 @@ bash 02_get_primary_assemblies.sh "/scratch/pawsey0964/lhuet/hic-analysis"
 ```
 **Step 4.** Update the loop script for your samples and submit the script
 ```
-bash 04_loop.sh
+bash 03_submit_loop.sh
 ```
-**The run_hiline.sh script performs the following steps**
+**The 04_submit_hiline.sh script performs the following steps**
 1. Extracts the 30 largest contigs from the hifi assembly file
 2. Skims the HiC reads to 1x
 3. Aligns the skimmed reads to the 30 largest contigs and converts to cram file
